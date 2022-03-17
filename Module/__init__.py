@@ -1,13 +1,4 @@
 import speech_recognition as sr
-import pyttsx3
-
-class Speak:
-    engine = pyttsx3.init()
-    engine.setProperty('rate',145)
-
-    def speakout(self,voice):
-        self.engine.say(voice)
-        self.engine.runAndWait()
 
 class Recognizer:
     r = sr.Recognizer()
@@ -24,15 +15,17 @@ class Recognizer:
                 return text
 
 
-class ExtractCommand:
-    def __init__(self,cmd):
-        self.cmd = cmd
-    
-    def Extract(self):
-        if "close" in self.cmd:
-            return "exit"
-        else:
-            return f"{self.cmd}"
+import pyttsx3
+
+class Speak:
+    engine = pyttsx3.init()
+    engine.setProperty('rate',145)
+
+    def speakout(self,voice):
+        self.engine.say(voice)
+        self.engine.runAndWait()
+
+
 
 class ExecuteCommand:
     def __init__(self,cmd):
@@ -44,3 +37,19 @@ class ExecuteCommand:
         else:
             Speak().speakout(self.cmd)
             print(self.cmd)
+
+
+
+
+class ExtractCommand:
+    def __init__(self,cmd):
+        self.cmd = cmd
+    
+    def Extract(self):
+        if "close" in self.cmd:
+            return "exit"
+        else:
+            return f"{self.cmd}"
+
+
+

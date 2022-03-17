@@ -1,4 +1,4 @@
-from Module import Recognizer,ExtractCommand,ExecuteCommand,Speak
+from Module import Recognizer,Speak,ExecuteCommand,ExtractCommand
 import os
 from time import sleep
 
