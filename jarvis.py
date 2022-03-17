@@ -1,4 +1,8 @@
-from Module import Recognizer,Speak,ExecuteCommand,ExtractCommand
+# from Module import recognizer,execute,extractor,speaker
+from Module.speaker import Speak
+from Module.execute import ExecuteCommand
+from Module.extractor import ExtractCommand
+from Module.recognizer import Recognizer
 import os
 from time import sleep
 
